@@ -18,8 +18,10 @@ In order to do that we will need and stock of the supermarket, it should have th
 ```bash
 SKU     Price   Description 
 ---------------------------
-  A      2.00     Potato 
-  B      4.00     Tomato
+  A      2.00     Milk 
+  B      4.00     Orange Juice
+  C      3.50     Chocolate
+  D      1.00     Banana
 ```
 
 There is no any restriction on how implement the stock.
@@ -59,7 +61,7 @@ So jump [here](./src/test/kotlin/de/tech26/supermarket/changemeplease/ChangeMeCo
 
 ## Bonus
 
-- How to handle non-existent stock?
+- How to handle non-existent SKU?
 - Introduce a discount system, choose one:
   - 2x1 in some products
   - Discount codes, % per total
