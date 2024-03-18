@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
@@ -18,6 +20,12 @@ class ManageItemsController {
     fun listItems(): ResponseEntity<List<Item>> {
         val items = itemRepository.findAll()
         return ResponseEntity(items, HttpStatus.OK)
+    }
+
+    @PostMapping("/items")
+    fun addItem(@RequestBody item: Item): ResponseEntity<Item> {
+        val savedItem = itemRepository.save(item)
+        return ResponseEntity(savedItem, HttpStatus.CREATED)
     }
 
 }
