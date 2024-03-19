@@ -2,10 +2,10 @@
 
 Kata to practice outside-in TDD with [double loop](http://coding-is-like-cooking.info/2013/04/outside-in-development-with-double-loop-tdd/).
 
-The idea is let tdd to guide us through **architecture and domain design** in a more realistic and day to day context, a
-micro-services environment.
+The idea is let TDD to guide us through **architecture and domain design** in a more realistic and day to day context, a
+microservices environment.
 
-This Kata is based on https://github.com/albertllousas/supermarket-tdd-rest-kata and originaly inspired on [supermarket code kata](http://codekata.com/kata/kata01-supermarket-pricing/)
+This Kata is based on https://github.com/albertllousas/supermarket-tdd-rest-kata and originally inspired on [supermarket code kata](http://codekata.com/kata/kata01-supermarket-pricing/)
 
 ## Kata description
 
