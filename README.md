@@ -5,8 +5,7 @@ Kata to practice outside-in TDD with [double loop](http://coding-is-like-cooking
 The idea is let tdd to guide us through **architecture and domain design** in a more realistic and day to day context, a
 micro-services environment.
 
-Fork of https://github.com/albertllousas/supermarket-tdd-rest-kata
-Inspired on [supermarket code kata](http://codekata.com/kata/kata01-supermarket-pricing/)
+This Kata is based on https://github.com/albertllousas/supermarket-tdd-rest-kata and originaly inspired on [supermarket code kata](http://codekata.com/kata/kata01-supermarket-pricing/)
 
 ## Kata description
 
@@ -31,7 +30,7 @@ And these are the expected input/outputs for the app.
 For the following API call:
 
 ```bash
-curl --request POST http://localhost:8080/supermarket/checkout \
+curl --request POST http://localhost:8080/checkout \
   --header 'Content-Type: application/json' \
   --data '{ skus: ["A","B","A","B","A","A","A"] }' \
   --include
@@ -54,10 +53,10 @@ Have fun!
 
 ## Where to start
 
-We have provided the exercise with the [acceptance test](./src/test/kotlin/de/tech26/supermarket/acceptance/CalculateCartTotalAcceptanceTest.kt) already
+We have provided the exercise with the [acceptance test](./src/test/kotlin/com/katas/supermarket/acceptance/CalculateCartTotalAcceptanceTest.kt) already
 set up, we don't want to waste time designing an API.
 
-So jump [here](./src/test/kotlin/de/tech26/supermarket/changemeplease/ChangeMeControllerTest.kt) and start coding.
+So jump [here](./src/main/kotlin/com/katas/supermarket/api/ChangeMeController.kt) and start coding.
 
 ## Bonus
 
@@ -65,40 +64,6 @@ So jump [here](./src/test/kotlin/de/tech26/supermarket/changemeplease/ChangeMeCo
 - Introduce a discount system, choose one:
   - 2x1 in some products
   - Discount codes, % per total
-
-## Tech stack
-
-* Kotlin
-* [Spring boot](https://spring.io/projects/spring-boot)
-* Testing libraries/frameworks:
-  * [JUnit 5](https://junit.org/junit5/docs/current/user-guide/)
-  * [Assertj](https://joel-costigliola.github.io/assertj/)
-  * [Mockk](https://mockk.io/)
-  * [REST Assured](http://rest-assured.io/)
-
-They are just the most common used, feel free to add/remove/change any dependency that fits to you
-
-## Running the tests
-
-Run all tests:
-```bash
-./gradlew test
-```
-
-Run unit tests:
-```bash
-./gradlew unitTest
-```
-
-Run integration tests:
-```bash
-./gradlew integrationTest
-```
-
-Run acceptance tests:
-```bash
-./gradlew acceptanceTest
-```
 
 ## Useful links
 
