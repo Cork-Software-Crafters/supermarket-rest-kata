@@ -53,10 +53,10 @@ Have fun!
 
 ## Where to start
 
-We have provided the exercise with the [acceptance test](./src/test/kotlin/com/katas/supermarket/acceptance/CalculateCartTotalAcceptanceTest.kt) already
+We have provided the exercise with the [acceptance test](./kotlin/src/test/kotlin/com/katas/supermarket/acceptance/CalculateCartTotalAcceptanceTest.kt) already
 set up, we don't want to waste time designing an API.
 
-So jump [here](./src/main/kotlin/com/katas/supermarket/api/ChangeMeController.kt) and start coding.
+So jump [here](./kotlin/src/main/kotlin/com/katas/supermarket/api/ChangeMeController.kt) and start coding.
 
 ## Bonus
 
