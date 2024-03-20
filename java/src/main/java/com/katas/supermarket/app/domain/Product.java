@@ -6,17 +6,17 @@ import jakarta.persistence.Id;
 import java.math.BigDecimal;
 
 @Entity
-public class Item {
+public class Product {
 
     @Id
     private String sku;
     private BigDecimal price;
     private String description;
 
-    public Item() {
+    public Product() {
     }
 
-    public Item(String sku, BigDecimal price, String description) {
+    public Product(String sku, BigDecimal price, String description) {
         this.sku = sku;
         this.price = price;
         this.description = description;

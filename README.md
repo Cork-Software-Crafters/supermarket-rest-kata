@@ -9,10 +9,7 @@ This Kata is based on https://github.com/albertllousas/supermarket-tdd-rest-kata
 
 ## Kata description
 
-We are going to implement a supermarket checkout, that basically calculates the total price given a list of **products** a
-customer have on the **cart**.
-
-In order to do that we will need and stock of the supermarket, it should have this information, at least:
+The application has already a list of products with their prices accessible through the API endpoint `GET http://localhost:8080/products`. Data is stored in H2 database.
 
 ```bash
 SKU     Price   Description 
@@ -23,7 +20,8 @@ SKU     Price   Description
   D      1.00     Banana
 ```
 
-There is no any restriction on how implement the stock.
+We are going to implement a supermarket checkout, that basically calculates the total price given a list of **products** a
+customer have on the **cart**.
 
 And these are the expected input/outputs for the app.
 

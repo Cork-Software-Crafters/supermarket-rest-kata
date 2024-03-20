@@ -2,7 +2,6 @@ package com.katas.supermarket.acceptance
 
 
 import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.Tag
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
@@ -13,7 +12,6 @@ import org.springframework.http.HttpMethod
 import org.springframework.http.HttpStatus
 import org.springframework.web.client.RestTemplate
 
-@Tag("acceptance")
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class CalculateCartTotalAcceptanceTest {
 
@@ -24,7 +22,7 @@ class CalculateCartTotalAcceptanceTest {
     private lateinit var restTemplate: RestTemplate
 
     @Test
-    fun `should calculate the total of the cart given a list of skus`() {
+    fun `should calculate the total of the cart given a list of SKUs`() {
         val requestBody =
                 """
 					{ 
