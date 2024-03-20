@@ -21,7 +21,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @ActiveProfiles("test")
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class CalculateCartTotalAcceptanceTest {
+public class ListProductsAcceptanceTest {
 
     @LocalServerPort
     private int port;
@@ -33,32 +33,36 @@ public class CalculateCartTotalAcceptanceTest {
     private ProductRepository productRepository;
 
     @Test
-    public void should_calculate_total_of_cart_given_list_of_skus() {
+    public void should_list_products_in_stock() {
         // Given
         productRepository.save(new Product("A", new BigDecimal("2.00"), "Milk"));
         productRepository.save(new Product("B", new BigDecimal("4.00"), "Orange Juice"));
 
         // When
-        String requestBody =
-                """
-                            {
-                                "skus": ["A","B","A","B","A","A","A"]
-                            }
-                        """;
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(org.springframework.http.MediaType.APPLICATION_JSON);
-
         ResponseEntity<String> responseEntity = restTemplate.exchange(
-                "http://localhost:" + port + "/checkout",
-                HttpMethod.POST,
-                new HttpEntity<>(requestBody, headers),
+                "http://localhost:" + port + "/products",
+                HttpMethod.GET,
+                new HttpEntity<>(headers),
                 String.class
         );
 
         // Then
-        assertThat(responseEntity.getStatusCode()).isEqualTo(HttpStatus.CREATED);
+        assertThat(responseEntity.getStatusCode()).isEqualTo(HttpStatus.OK);
         assertThatJson(responseEntity.getBody()).isEqualTo("""
-                { "total": 18.00 }
+                [
+                  {
+                    "sku": "A",
+                    "price": 2.00,
+                    "description": "Milk"
+                  },
+                  {
+                    "sku": "B",
+                    "price": 4.00,
+                    "description": "Orange Juice"
+                  }
+                ]
                 """);
     }
 }
