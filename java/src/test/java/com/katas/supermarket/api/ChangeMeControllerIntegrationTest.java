@@ -15,7 +15,7 @@ public class ChangeMeControllerIntegrationTest {
     private MockMvc mockMvc;
 
     @Test
-    public void shouldNotCalculateAnythingIfCartIsEmpty() throws Exception {
+    public void should_not_calculate_anything_if_cart_is_empty() throws Exception {
         mockMvc.perform(
                 MockMvcRequestBuilders.post("/checkout").content("{ \"skus\": [] }")
         ).andExpect(status().isNoContent());
