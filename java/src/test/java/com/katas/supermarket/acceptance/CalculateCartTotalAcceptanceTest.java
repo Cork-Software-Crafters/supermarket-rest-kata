@@ -47,7 +47,6 @@ public class CalculateCartTotalAcceptanceTest {
                         """;
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(org.springframework.http.MediaType.APPLICATION_JSON);
-
         ResponseEntity<String> responseEntity = restTemplate.exchange(
                 "http://localhost:" + port + "/checkout",
                 HttpMethod.POST,

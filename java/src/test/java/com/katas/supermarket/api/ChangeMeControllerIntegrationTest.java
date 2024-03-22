@@ -20,4 +20,6 @@ public class ChangeMeControllerIntegrationTest {
                 MockMvcRequestBuilders.post("/checkout").content("{ \"skus\": [] }")
         ).andExpect(status().isNoContent());
     }
+
+    // TODO: Start here adding next test
 }

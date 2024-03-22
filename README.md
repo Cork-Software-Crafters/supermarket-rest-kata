@@ -11,7 +11,7 @@ This Kata is based on https://github.com/albertllousas/supermarket-tdd-rest-kata
 
 The application has already a list of products with their prices accessible through the API endpoint `GET http://localhost:8080/products`. Data is stored in H2 database.
 
-```bash
+```
 SKU     Price   Description 
 ---------------------------
   A      2.00     Milk 
@@ -63,8 +63,24 @@ So jump [here](./kotlin/src/main/kotlin/com/katas/supermarket/api/ChangeMeContro
   - 2x1 in some products
   - Discount codes, % per total
 
+## Run the tests
+The most convenient way of running the tests is directly from your IDE. They can also be run from the console using Gradle.
+```
+gradlew.bat test  // on Windows
+./gradlew test    // on Linux
+```
+
+## Starting the application
+```
+gradlew.bat bootRun // on Windows
+./gradlew bootRun   // on Linux
+```
+Try the existing list products endpoint with the following command:
+```bash
+curl --request GET http://localhost:8080/products
+```
+
 ## Useful links
 
 - [Outside-in Double Loop TDD](http://coding-is-like-cooking.info/2013/04/outside-in-development-with-double-loop-tdd/)
 - [London School](https://www.slideshare.net/pkofler/outsidein-test-driven-development-the-london-school-of-tdd)
-
